@@ -55,7 +55,7 @@ Before running the backtracking algorithm, we figure out all possible digits for
 
 We first figure out all possible digits for each of the empty square as follows:
 
-
+```
   -      1679   12679   |  139     2369    269   |   -      1239     -    
  26789     -    1256789 | 14589   24569   245689 | 12679    1249   124679 
   2689   15689   125689 |   -     234569  245689 | 12369   12349   123469 
@@ -70,5 +70,6 @@ We first figure out all possible digits for each of the empty square as follows:
    -      6789     3    |   -      479      -    |   69     489     4689  
    -      6789     4    |  589     579     5789  | 23569   23589   23689  
 
-   
+```
+
 Now, if only one digit is possible for an empty square, we just assign the digit to that square. Now for searching for an empty square, the traditional algorithm tries the order it appears in the grid. However, similar to Norvig's tutorial, I use a common heuristic called **minimum remaining values**. E.g. suppose, we have for empty squares in a grid and the number of possible digits in the squares are 7, 2, 5, 3, a total of 7x2x5x3 = 210 combination. Now if we choose to solve the first square, then there are  7 possibilities, so we'd expect to guess wrong with probability 6/7. If instead we choose the second square, which only has 2 possibilities, we'd expect to be wrong with probability only 1/2. Thus we choose the square with the fewest possibilities and the best chance of guessing right. Therefore, we will try the squares with 2, 3, 5 and 7 possibilities respectively.

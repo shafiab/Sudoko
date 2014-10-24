@@ -9,22 +9,22 @@ Algorithm
 The solver uses a backtracking algorithm. The main idea behind the algorithm is to determine an empty grid square, try out different possible digits. If for an empty square, a digit has no conflicts with the 20 peers of the square, the solver assigns the digit in that square. It then  moves to the next empty square and repeats the procedure. If for any square, all possible digits has conflict, the algorithm backtracks to previous empty square it tried. 
 
 A peer of a square are the rows/colums and the 3x3 square (e.g. the 20 peers of C2 are shown below).
+
 ```
 
-    A2   |         |        |         |         |         |     A1 A2 A3|         |         
-    B2   |         |        |         |         |         |   B1 B2 B3|         |         
-    C2   |         |        | C1 C2 C3| C4 C5 C6| C7 C8 C9|   C1 C2 C3|         |         
----------|---------|---------  ---------|---------|---------  ---------|---------|---------
-
-    D2   |         |                    |         |                    |         |         
-    E2   |         |                    |         |                    |         |         
-    F2   |         |                    |         |                    |         |         
----------+---------+---------  ---------+---------+---------  ---------+---------+---------
-
-    G2   |         |                    |         |                    |         |         
-    H2   |         |                    |         |                    |         |         
-    I2   |         |                    |         |                    |         |         
-    ```
+    A2   |         |                    |         |             A1 A2 A3|         |         
+    B2   |         |                    |         |             B1 B2 B3|         |         
+    C2   |         |            C1 C2 C3| C4 C5 C6| C7 C8 C9    C1 C2 C3|         |         
+---------|---------|---------  ---------|---------|---------   ---------|---------|---------
+    D2   |         |                    |         |                     |         |         
+    E2   |         |                    |         |                     |         |         
+    F2   |         |                    |         |                     |         |         
+---------+---------+---------  ---------+---------+---------   ---------+---------+---------
+    G2   |         |                    |         |                     |         |         
+    H2   |         |                    |         |                     |         |         
+    I2   |         |                    |         |                     |         |         
+    
+```
 
 A very fast and elegant algorithm to solve sudoko using constraint propagation and backtracking is available in Peter Norvig's website:
 http://norvig.com/sudoku.html
@@ -50,9 +50,11 @@ Before running the backtracking algorithm, we figure out all possible digits for
 0 0 0 |6 0 3 |0 7 0 
 5 0 0 |2 0 0 |0 0 0 
 1 0 4 |0 0 0 |0 0 0 
+
 ```
 
 We first figure out all possible digits for each of the empty square as follows:
+
 
   -      1679   12679   |  139     2369    269   |   -      1239     -    
  26789     -    1256789 | 14589   24569   245689 | 12679    1249   124679 

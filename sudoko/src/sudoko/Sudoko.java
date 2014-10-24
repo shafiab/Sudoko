@@ -4,9 +4,9 @@ import sudoko.SolveSudoko;
 import sudoko.Constant;
 
 public class Sudoko {
-	private static final String INPUT_FILE = "src/Input/inputMatrix.csv"; // input file name and location
-	//private static final String INPUT_FILE = "src/Input/inputHard.csv"; // input file name and location
-	private static final String OUTPUT_FILE = "src/Output/outputMatrix.csv"; // output file name and location
+	private static final String INPUT_FILE = "src/input/inputMatrix.csv"; // input file name and location
+	//private static final String INPUT_FILE = "src/input/inputHard.csv"; // input file name and location
+	private static final String OUTPUT_FILE = "src/output/outputMatrix.csv"; // output file name and location
 
 	public static void main(String[] args) throws IOException
 	{

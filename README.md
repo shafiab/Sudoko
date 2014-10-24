@@ -71,3 +71,8 @@ We first figure out all possible digits for each of the empty square as follows:
 ```
 
 Now, if only one digit is possible for an empty square, we just assign the digit to that square. Now for searching for an empty square, the traditional algorithm tries the order it appears in the grid. However, similar to Norvig's tutorial, I use a common heuristic called **minimum remaining values**. E.g. suppose, we have for empty squares in a grid and the number of possible digits in the squares are 7, 2, 5, 3, a total of 7x2x5x3 = 210 combination. Now if we choose to solve the first square, then there are  7 possibilities, so we'd expect to guess wrong with probability 6/7. If instead we choose the second square, which only has 2 possibilities, we'd expect to be wrong with probability only 1/2. Thus we choose the square with the fewest possibilities and the best chance of guessing right. Therefore, we will try the squares with 2, 3, 5 and 7 possibilities respectively.
+
+
+Development Environment
+========================
+Project was created using eclipse luna for Java version 1.6. In order to read from and write to csv files, opencsv version 2.3 was used. The file is also included in the project plugins directory.
